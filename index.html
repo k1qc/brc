@@ -1,0 +1,30 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <p>ウィンドウの数<input type="number" id="A"></p>
+        <p>URL<input type="url" id="url"></p>
+        <P>無限<input type="checkbox" id="inf"></P>
+        <p id="C"></p>
+        <div id="text-button"><p id="text">開始</p></div>
+        <script>
+            let windows =0;
+
+            document.getElementById("text-button").onclick = function() {
+                windows = 0;
+                
+                if(A.value == ""){
+                    A.value=1;
+                }
+                
+                C.innerText = url.value + "の" + A.value + "つのポップアップを開きます";
+                do{
+                    if(inf.checked == true){windows = 0;}
+                    windows ++;
+                    window.open(url);
+                }while(windows < A.value)
+            };
+        </script>
+    </body>
+</html>
